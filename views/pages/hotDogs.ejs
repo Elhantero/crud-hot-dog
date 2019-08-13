@@ -1,0 +1,32 @@
+<div class="jumbotron text-center">
+    <h1>All Hot Dogs</h1>
+</div>
+
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+    <tr>
+        <th>Hot Dog name</th>
+        <th>Recipe</th>
+        <th></th>
+    </tr>
+    </thead>
+
+    <tbody>
+
+    <% for (const hotDog of hotDogs) { %>
+    <tr>
+        <td>
+            <%= hotDog.name %>
+        </td>
+        <td>
+            <%= hotDog.description %>
+        </td>
+        <td>
+            <a href="/allhotdogs/<%= hotDog.slug %>" class="btn btn-sm btn-primary">View</a>
+            <a href="/allhotdogs/<%= hotDog.slug %>/edit" class="btn btn-sm btn-primary">Edit</a>
+            <a href="/allhotdogs/<%= hotDog.slug %>/delete" class="btn btn-sm btn-danger">Delete</a>
+        </td>
+    </tr>
+    <% } %>
+    </tbody>
+</table>
